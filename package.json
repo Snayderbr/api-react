@@ -1,0 +1,22 @@
+{
+  "name": "pelis-api",
+  "version": "1.0.0",
+  "description": "API REST de películas y series - IUDigital",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "morgan": "^1.11.0",
+    "sequelize": "^6.37.8",
+    "sqlite3": "^6.0.1"
+  }
+}

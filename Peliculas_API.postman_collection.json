@@ -1,0 +1,40 @@
+{
+  "info": {
+    "name": "IU Digital - API Películas (Caso de Estudio)",
+    "description": "Colección para probar los 5 módulos: Género, Director, Productora, Tipo y Media.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{"key": "base_url", "value": "http://localhost:3000/api"}],
+  "item": [
+    {"name":"Genero","item":[
+      {"name":"Listar generos","request":{"method":"GET","url":"{{base_url}}/generos"}},
+      {"name":"Crear genero","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"nombre\":\"Comedia\",\"estado\":\"Activo\",\"descripcion\":\"Películas y series de comedia\"}"},"url":"{{base_url}}/generos"}},
+      {"name":"Actualizar genero","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"nombre\":\"Comedia\",\"estado\":\"Inactivo\",\"descripcion\":\"Actualizado\"}"},"url":"{{base_url}}/generos/1"}},
+      {"name":"Eliminar genero","request":{"method":"DELETE","url":"{{base_url}}/generos/1"}}
+    ]},
+    {"name":"Director","item":[
+      {"name":"Listar directores","request":{"method":"GET","url":"{{base_url}}/directores"}},
+      {"name":"Crear director","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"nombres\":\"Steven Spielberg\",\"estado\":\"Activo\"}"},"url":"{{base_url}}/directores"}},
+      {"name":"Actualizar director","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"nombres\":\"Steven Spielberg\",\"estado\":\"Inactivo\"}"},"url":"{{base_url}}/directores/1"}},
+      {"name":"Eliminar director","request":{"method":"DELETE","url":"{{base_url}}/directores/1"}}
+    ]},
+    {"name":"Productora","item":[
+      {"name":"Listar productoras","request":{"method":"GET","url":"{{base_url}}/productoras"}},
+      {"name":"Crear productora","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"nombre\":\"Disney\",\"estado\":\"Activo\",\"slogan\":\"The happiest place on earth\",\"descripcion\":\"The Walt Disney Company\"}"},"url":"{{base_url}}/productoras"}},
+      {"name":"Actualizar productora","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"nombre\":\"Disney\",\"estado\":\"Inactivo\",\"slogan\":\"...\",\"descripcion\":\"...\"}"},"url":"{{base_url}}/productoras/1"}},
+      {"name":"Eliminar productora","request":{"method":"DELETE","url":"{{base_url}}/productoras/1"}}
+    ]},
+    {"name":"Tipo","item":[
+      {"name":"Listar tipos","request":{"method":"GET","url":"{{base_url}}/tipos"}},
+      {"name":"Crear tipo","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"nombre\":\"Documental\",\"descripcion\":\"Contenido documental\"}"},"url":"{{base_url}}/tipos"}},
+      {"name":"Actualizar tipo","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"nombre\":\"Documental\",\"descripcion\":\"Actualizado\"}"},"url":"{{base_url}}/tipos/1"}},
+      {"name":"Eliminar tipo","request":{"method":"DELETE","url":"{{base_url}}/tipos/1"}}
+    ]},
+    {"name":"Media (Peliculas y Series)","item":[
+      {"name":"Listar medias","request":{"method":"GET","url":"{{base_url}}/medias"}},
+      {"name":"Crear media","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"serial\":\"AVT-001\",\"titulo\":\"Avatar\",\"sinopsis\":\"Un ex-marine en Pandora.\",\"url\":\"https://example.com/avatar\",\"imagen\":\"https://example.com/avatar.jpg\",\"anio_estreno\":2009,\"genero_id\":3,\"director_id\":1,\"productora_id\":1,\"tipo_id\":1}"},"url":"{{base_url}}/medias"}},
+      {"name":"Actualizar media","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"titulo\":\"Avatar (Edición especial)\"}"},"url":"{{base_url}}/medias/1"}},
+      {"name":"Eliminar media","request":{"method":"DELETE","url":"{{base_url}}/medias/1"}}
+    ]}
+  ]
+}

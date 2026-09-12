@@ -1,0 +1,168 @@
+/* fuente principal y colores base */
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #3466ac;
+  background: #f4f4f4;
+  font-synthesis: none;
+}
+
+/* todos los elementos incluyen padding y border en su tamaño */
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+
+/* los inputs y botones heredan la fuente del padre */
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+
+
+/* maquetacion principal */
+
+.app-shell { min-height: 100vh; display: flex; }
+
+/* sidebar fijo a la izquierda */
+.sidebar {
+  width: 280px; background: #111827; color: #fff; padding: 24px 16px;
+  display: flex; flex-direction: column; gap: 28px; position: fixed; inset: 0 auto 0 0;
+}
+
+/* el contenido principal deja espacio para el sidebar */
+.main-content { margin-left: 280px; width: calc(100% - 250px); padding: 0 34px 50px; }
+
+
+/* sidebar: logo y nombre */
+
+.brand { display: flex; align-items: center; gap: 12px; padding: 4px 10px 16px; }
+.brand-icon { width: 43px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: #374151; }
+.brand strong { display: block; font-size: 17px; }
+.brand span { color: #9ca3af; font-size: 12px; }
+
+
+/* navegación del sidebar  */
+
+nav { display: grid; gap: 6px; }
+
+.nav-item {
+  border: 0; background: transparent; color: #d1d5db; text-align: left;
+  padding: 12px 13px; border-radius: 10px; display: flex; gap: 10px; align-items: center;
+}
+/* resalta el item activo o cuando el mouse pasa encima */
+.nav-item:hover, .nav-item.active { background: #374151; color: white; }
+
+/* punto verde en la parte de abajo del sidebar para efecto de conectado */
+.api-status { margin-top: auto; font-size: 11px; color: #9ca3af; display: flex; gap: 8px; align-items: center; }
+.api-status span { width: 7px; height: 7px; background: #00633f; border-radius: 50%; }
+
+
+/* barra superior (ver API) */
+
+.topbar { height: 64px; display: flex; align-items: center; justify-content: space-between; color: #6b7280; font-size: 13px; }
+.topbar a { color: #eb25c3; text-decoration: none; }
+
+
+/* el encabezado de cada página */
+
+.page-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 30px 0 22px; }
+
+/* texto pequeño encima del titulo (administracion y contenido) */
+.eyebrow { margin: 0 0 5px; color: #0e2552; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; font-weight: 700; }
+h1 { margin: 0; font-size: 31px; color: #111827; }
+
+
+/* tarjetas y tablas */
+
+.card, .media-card { background: white; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 5px 20px rgba(17,24,39,.04); }
+.table-card { overflow: hidden; }
+
+/* scroll horizontal si la tabla no cabe en pantalla */
+.table-wrap { overflow-x: auto; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 15px 16px; text-align: left; border-bottom: 1px solid #eef0f4; font-size: 14px; }
+th { background: #fafafa; color: #6b7280; font-size: 12px; text-transform: uppercase; }
+
+/* botones editar/eliminar dentro de una fila */
+.actions { display: flex; gap: 7px; }
+
+
+/* botones  */
+
+.primary-button, .secondary-button, .small-button, .icon-button {
+  border: 0; border-radius: 9px; padding: 10px 14px; font-weight: 650;
+}
+.primary-button { background: #111827; color: white; }
+.secondary-button { background: #eef0f4; color: #374151; }
+
+/* botones pequeños dentro de tablas y tarjetas */
+.small-button { padding: 7px 10px; background: #eef2ff; color: #374151; font-size: 12px; }
+.small-button.danger { background: #fef2f2; color: #b91c1c; }
+
+
+/*  mensajes  */
+
+.alert { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 12px 14px; border-radius: 10px; margin-bottom: 16px; white-space: pre-line; }
+.empty { padding: 35px; text-align: center; color: #6b7280; }
+
+
+/* modal */
+/* fondo oscuro detrás del modal para centrar el contenido */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.55); display: grid; place-items: center; padding: 20px; z-index: 10; }
+
+.modal { width: min(850px, 100%); max-height: 90vh; overflow: auto; background: white; border-radius: 18px; padding: 22px; }
+.modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.modal-header h2 { margin: 0; }
+
+/* botón X para cerrar el modal */
+.icon-button { background: #f3f4f6; font-size: 23px; width: 38px; height: 38px; padding: 0; }
+
+
+/*  formularios  */
+
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.form-grid label { display: grid; gap: 7px; }
+.form-grid label span { font-size: 13px; font-weight: 700; color: #374151; }
+.form-grid input, .form-grid textarea, .form-grid select {
+  width: 100%; border: 1px solid #d1d5db; border-radius: 9px; padding: 10px 11px; outline: none; background: white;
+}
+.form-grid input:focus, .form-grid textarea:focus, .form-grid select:focus { border-color: #6b7280; }
+
+
+.full { grid-column: 1 / -1; }
+.form-actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 5px; }
+
+
+/*  tarjetas de películas y series  */
+
+/* grid responsive con un mínimo de 310px por tarjeta */
+.media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 18px; }
+.media-card { overflow: hidden; }
+
+/* imagen del poster o placeholder(🎬) si no hay imagen */
+.media-card > img, .poster-placeholder { width: 100%; height: 180px; object-fit: cover; background: #e5e7eb; }
+.poster-placeholder { display: grid; place-items: center; font-size: 45px; }
+
+.media-content { padding: 17px; }
+.media-content h3 { margin: 8px 0; font-size: 20px; }
+.media-content p { color: #6b7280; font-size: 13px; min-height: 38px; }
+.media-content small { color: #6b7280; display: block; margin-bottom: 14px; }
+
+/* etiqueta de tipo (Serie o Película) */
+.badge { background: #eef2ff; color: #4338ca; border-radius: 99px; padding: 5px 9px; font-size: 11px; font-weight: 700; }
+
+
+/* el responsive para móvil  */
+
+@media (max-width: 800px) {
+  .sidebar { width: 100%; height: auto; position: static; }
+  .app-shell { display: block; }
+  .sidebar nav { grid-template-columns: repeat(2, 1fr); }
+
+  .api-status { display: none; }
+
+  .main-content { margin-left: 0; width: 100%; padding: 0 16px 40px; }
+  .topbar { height: 54px; }
+
+  .form-grid { grid-template-columns: 1fr; }
+  .full { grid-column: auto; }
+  .page-heading { align-items: flex-start; flex-direction: column; }
+}
