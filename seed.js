@@ -3,7 +3,7 @@ const { sequelize, Genero, Tipo, Director, Productora } = require('./src/models'
 
 async function seed() {
   try {
-    await sequelize.sync({ alter: true });
+    await sequelize.sync();
 
     const generos = ['Acción', 'Aventura', 'Ciencia Ficción', 'Drama', 'Terror'];
     for (const nombre of generos) {

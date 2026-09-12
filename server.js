@@ -9,12 +9,12 @@ async function iniciar() {
     await sequelize.authenticate();
     console.log('✅ Conexión a la base de datos establecida correctamente.');
 
-    await sequelize.sync({ alter: true });
+    await sequelize.sync();
     console.log('✅ Modelos sincronizados con la base de datos.');
 
     app.listen(PORT, () => {
       console.log(`🚀 API escuchando en http://localhost:${PORT}`);
-      console.log(`   Documentación rápida: http://localhost:${PORT}/`);
+      
     });
   } catch (error) {
     console.error('❌ Error al iniciar el servidor:', error);
