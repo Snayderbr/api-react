@@ -25,9 +25,12 @@ export default function App() {
           <div><strong>I.S Movies and shows</strong><span>IUDigital</span></div>
         </div>
         <nav>
-          {pages.map(([id, icon, label]) => (
-            <button key={id} className={page === id ? 'nav-item active' : 'nav-item'} onClick={() => setPage(id)}>
-              <span>{icon}</span>{label}
+          {pages.map(([id, label]) => (
+            <button key={id} 
+              className={page === id ? 'nav-item active' : 'nav-item'} 
+              onClick={() => setPage(id)}
+            >
+              {label}
             </button>
           ))}
         </nav>
