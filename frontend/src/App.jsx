@@ -39,7 +39,7 @@ export default function App() {
 
       <main className="main-content">
         <header className="topbar">
-          <a href="http://localhost:3000/" target="_blank" rel="noreferrer">Ver API ↗</a>
+          <a href="https://api-rest-58ka.onrender.com" target="_blank" rel="noreferrer">Ver API ↗</a>
         </header>
 
         {page === 'media' && <Media />}
